@@ -3,6 +3,7 @@ import { OpenAI } from './OpenAI.js';
 import { roles } from './Role';
 import { storageAvailable } from './storage.js';
 import gitlogo from './img/gitlogo.jpg';
+import background from './img/background.svg'
 
 const githubLogo = document.querySelector('.github-mark');
 const mainContainer = document.querySelector('.container');
@@ -253,7 +254,7 @@ function addMsg(msg) {
     message.textContent = `${msg}`;
     outputWindow.append(message);
     dialogue.push(msg);
-    // console.log(dialogue);
+    // console.log(dialogue)
 }
 
 function warningMsg(input, msg) {

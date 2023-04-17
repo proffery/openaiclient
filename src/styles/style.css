@@ -2,7 +2,7 @@
     --main-font: clamp(16px, calc(16px + (28 - 16) * ((100vw - 360px) / 1560)), 28px);
     --font-color: rgb(19, 9, 46);
     --background-color-main: rgb(19, 9, 46);
-    --background-color-block: rgb(255, 255, 255);
+    --background-color-block: rgba(255, 255, 255, 0.87);
     --shadow: rgb(255, 255, 255) 0px 1px 3px, rgb(5, 5, 5) 0px 1px 3px;
     --gradient: linear-gradient(90deg, rgba(36, 36, 44, 0.651) 0%, rgba(237, 237, 240, 0.329) 35%, rgba(36, 37, 37, 0.397) 100%);
 }
@@ -30,6 +30,11 @@ body {
     background-color: var(--background-color-main);
     font-size: var(--main-font);
     color: var(--font-color);
+    background-image: url("/dist/image/background.svg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .container{
@@ -105,7 +110,6 @@ p::first-letter {
 .hide-options {
     position: absolute;
     transform: scale(0);
-    transition: all ease-in .3s;
 }
 
 .column-one div, .column-two div, .names div, .key-container div {
@@ -127,6 +131,7 @@ label {
     text-align: left;
     font-family: main;
     border-radius: .3rem;
+    background-color: var(--background-color-block);
 }
 
 
@@ -134,7 +139,6 @@ label {
     display: flex;
     flex-direction: column;
     justify-content: end;
-    transition: all ease-in .3s;
 }
 
 .input-form {
@@ -152,6 +156,7 @@ label {
     text-align: start;
     overflow-y: auto;
     font-size: calc(var(--main-font) - 7px);
+    background-color: var(--background-color-block);
 
 }
 .input::placeholder {
@@ -229,10 +234,10 @@ a {
     transform: translateY(-50%);
     left: 50%;
     transform: translateX(-50%);
-    border: 1px solid #f39389;
+    border: 1px solid #f39489cc;
     border-radius: .3rem;
     padding: 1rem;
-    background-color: #fbd8d4;
+    background-color: #fbd8d4f5;
     color: #3b3c40;
     font-size: calc(var(--main-font) - 7px);
     font-family: main;
