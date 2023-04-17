@@ -14,7 +14,7 @@
 
 @font-face {
     font-family: main;
-    src: url(../font/FragmentMono-Regular.ttf);
+    src: url(../font/YanoneKaffeesatz-VariableFont_wght.ttf);
 }
 
 * {
@@ -30,7 +30,6 @@ body {
     background-color: var(--background-color-main);
     font-size: var(--main-font);
     color: var(--font-color);
-    background-image: url("/dist/image/background.svg");
     background-position: top;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -79,11 +78,13 @@ body {
     margin: .3rem;
     padding: .3rem;
     border-radius: .2rem;
+    white-space: pre-line;
 }
 
 p::first-letter {
-    font-weight: 900;
+    font-weight: 600;
     font-size: larger;
+    font-family: main;
 
 }
 .role-header {
@@ -234,7 +235,7 @@ a {
     transform: translateY(-50%);
     left: 50%;
     transform: translateX(-50%);
-    border: 1px solid #f39489cc;
+    border: 1px solid #f39489cb;
     border-radius: .3rem;
     padding: 1rem;
     background-color: #fbd8d4f5;

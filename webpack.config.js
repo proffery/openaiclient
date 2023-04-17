@@ -56,7 +56,11 @@ const config = {
         use: [stylesHandler, "css-loader"],
       },
       {
-        test: /\.(eot|svg|png|jpg|gif)$/i,
+        test: /\.(svg)$/i,
+        type: 'asset/inline',
+      },
+      {
+        test: /\.(eot|png|jpg|gif)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'image/[name][ext]'

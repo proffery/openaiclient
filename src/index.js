@@ -5,6 +5,7 @@ import { storageAvailable } from './storage.js';
 import gitlogo from './img/gitlogo.jpg';
 import background from './img/background.svg'
 
+const body = document.querySelector('body');
 const githubLogo = document.querySelector('.github-mark');
 const mainContainer = document.querySelector('.container');
 const mainContainerLogo = document.querySelector('.role-header')
@@ -25,10 +26,12 @@ const inputAiName = document.querySelector('.ai-name');
 const roleSelect = document.querySelector('.role');
 const key = document.querySelector('.key');
 
-let dialogue = [];
 githubLogo.src = gitlogo;
+body.style.backgroundImage = `url(${background})`;
 generateRolesSelectOptions(inputYourName.value, inputAiName.value);
 keyStorageInit();
+
+let dialogue = [];
 let openAI = new OpenAI(key.value);
 
 function keyStorageInit() {
@@ -157,12 +160,12 @@ langSelect.addEventListener('change', () => {
 
 roleSelect.addEventListener('change', () => {
     mainContainerLogo.textContent = roleSelect.value.toUpperCase();
-    setTimeout(cleanDialogue, 1000);
+    setTimeout(cleanDialogue, 2000);
     warningMsg(mainContainer, `AI-Role:${roleSelect.value}`);
 });
 
 inputModel.addEventListener('change', () => {
-    setTimeout(cleanDialogue, 1000);
+    setTimeout(cleanDialogue, 2000);
     warningMsg(mainContainer, `Model:${inputModel.value}`);
 });
 
