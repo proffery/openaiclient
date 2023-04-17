@@ -1,0 +1,241 @@
+:root {
+    --main-font: clamp(16px, calc(16px + (28 - 16) * ((100vw - 360px) / 1560)), 28px);
+    --font-color: rgb(19, 9, 46);
+    --background-color-main: rgb(19, 9, 46);
+    --background-color-block: rgb(255, 255, 255);
+    --shadow: rgb(255, 255, 255) 0px 1px 3px, rgb(5, 5, 5) 0px 1px 3px;
+    --gradient: linear-gradient(90deg, rgba(36, 36, 44, 0.651) 0%, rgba(237, 237, 240, 0.329) 35%, rgba(36, 37, 37, 0.397) 100%);
+}
+
+@font-face {
+    font-family: header;
+    src: url(../font/Monoton-Regular.ttf);
+}
+
+@font-face {
+    font-family: main;
+    src: url(../font/FragmentMono-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color-main);
+    font-size: var(--main-font);
+    color: var(--font-color);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: start;
+    box-shadow: var(--shadow);
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 1rem;
+    width: clamp(300px, 40%, 32rem);
+    background: var(--gradient);
+    margin-top: .5rem;
+    text-align: center;
+    color: var(--background-color-block);
+    font-family: header;
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color-block);
+    box-shadow: var(--shadow);
+    height: 45vh;
+    padding: .5rem;
+    border-radius: .5rem;
+    font-size: calc(var(--main-font) - 5px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1;
+    font-family: main;
+    color: var(--font-color);
+    text-align: left;
+    transition: all ease-in .3s;
+}
+
+.message {
+    display: inline;
+    box-shadow: var(--shadow);
+    margin: .3rem;
+    padding: .3rem;
+    border-radius: .2rem;
+}
+
+p::first-letter {
+    font-weight: 900;
+    font-size: larger;
+
+}
+.role-header {
+    display: flex;
+    align-self: center;
+}
+
+.options, .names, .key-container {
+    display: flex;
+    margin-top: .5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.names, .key-container {
+    display: inline;
+    align-items: flex-start; 
+    /* margin-bottom: .5rem; */
+}
+.hide-output {
+    height: 78vh;
+    transition: all ease-in .3s;
+}
+.hide-options {
+    position: absolute;
+    transform: scale(0);
+    transition: all ease-in .3s;
+}
+
+.column-one div, .column-two div, .names div, .key-container div {
+    display: flex;
+    flex-direction: column;
+    color: var(--background-color-block);
+    margin-bottom: .3rem;
+}
+
+label {
+    font-size: calc(var(--main-font) - 8px);
+    text-align: left;
+    font-family: main;
+}
+
+.temperature, .tokens, .lang, .presence, .frequency, .model, .your-name, .ai-name, .role, .key {
+    display: flex;
+    font-size: calc(var(--main-font) - 7px);
+    text-align: left;
+    font-family: main;
+    border-radius: .3rem;
+}
+
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    transition: all ease-in .3s;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    display: flex;
+    height: 3rem;
+    border-radius: .5rem;
+    padding: .5rem;
+    margin-top: .5rem;
+    resize: none;
+    text-align: start;
+    overflow-y: auto;
+    font-size: calc(var(--main-font) - 7px);
+
+}
+.input::placeholder {
+    text-align: start;   
+    font-size: calc(var(--main-font) - 7px);
+}
+
+.input-label {
+    display: flex;
+    color: var(--background-color-block);
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    font-weight: 900;
+    font-size: var(--main-font);
+}
+
+.buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.submit, .clean {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    margin-top: .3rem;
+    min-width: 4rem;
+    font-size: calc(var(--main-font) - 5px);
+    background-color: var(--background-color-block);
+    border-radius: .3rem;
+    border: 0;
+    color: var(--background-color-main);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(var(--main-font) - 7px);
+    text-align: center;
+    padding: .5rem;
+    font-family: main;
+}
+
+.github-mark {
+    width: var(--main-font);
+    border-radius: 1rem;
+    transition: all .3s;
+}
+
+.github-mark:hover {
+    transform: rotate(360deg);
+}
+
+.footer p {
+    display: flex;
+    align-items: center;
+}
+
+a {
+    color: var(--background-color-block);
+    text-decoration: none;
+    text-align: center;
+    padding: .1rem;
+}
+
+.warning {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #f39389;
+    border-radius: .3rem;
+    padding: 1rem;
+    background-color: #fbd8d4;
+    color: #3b3c40;
+    font-size: calc(var(--main-font) - 7px);
+    font-family: main;
+    z-index: 2;
+    text-align: center;
+}
