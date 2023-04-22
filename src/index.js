@@ -254,10 +254,15 @@ function scrollDown() {
 function addMsg(msg) {
     const message = document.createElement('p');
     message.className = 'message';
-    message.textContent = `${msg}`;
+    if (msg.startsWith('\n')) {
+        message.textContent = ` ${msg}`;
+    }
+    else {
+        message.textContent = `\n${msg}`;
+    }
     outputWindow.append(message);
     dialogue.push(msg);
-    // console.log(dialogue)
+    console.log(dialogue)
 }
 
 function warningMsg(input, msg) {

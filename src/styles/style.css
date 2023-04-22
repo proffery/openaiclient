@@ -2,7 +2,7 @@
     --main-font: clamp(16px, calc(16px + (28 - 16) * ((100vw - 360px) / 1560)), 28px);
     --font-color: rgb(19, 9, 46);
     --background-color-main: rgb(19, 9, 46);
-    --background-color-block: rgba(255, 255, 255, 0.87);
+    --background-color-block: rgba(255, 255, 255, 0.822);
     --shadow: rgb(255, 255, 255) 0px 1px 3px, rgb(5, 5, 5) 0px 1px 3px;
     --gradient: linear-gradient(90deg, rgba(36, 36, 44, 0.651) 0%, rgba(237, 237, 240, 0.329) 35%, rgba(36, 37, 37, 0.397) 100%);
 }
@@ -42,9 +42,9 @@ body {
     align-self: center;
     justify-content: start;
     box-shadow: var(--shadow);
-    padding-top: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-top: .5rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
     border-radius: 1rem;
     width: clamp(300px, 40%, 32rem);
     background: var(--gradient);
@@ -60,7 +60,7 @@ body {
     background-color: var(--background-color-block);
     box-shadow: var(--shadow);
     height: 45vh;
-    padding: .5rem;
+    padding: 0rem;
     border-radius: .5rem;
     font-size: calc(var(--main-font) - 5px);
     overflow-y: auto;
@@ -76,9 +76,11 @@ body {
     display: inline;
     box-shadow: var(--shadow);
     margin: .3rem;
-    padding: .3rem;
-    border-radius: .2rem;
-    white-space: pre-line;
+    padding-bottom: .5rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    border-radius: .5rem .5rem 0 .5rem;
+    white-space: pre-wrap;
 }
 
 p::first-letter {

@@ -19,7 +19,7 @@ export class OpenAI {
                 stop: `${stop_name}`
             });
             console.log(`request cost: ${response.data.usage.total_tokens} tokens`);
-            //console.log(response.data.choices[0].text);
+            console.log(response.data.choices[0].text);
             return response.data.choices[0].text;
         } catch (error) {
             throw error;
